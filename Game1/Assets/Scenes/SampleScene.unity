@@ -146,7 +146,7 @@ RectTransform:
   m_GameObject: {fileID: 2386670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.6528, y: 10.818329, z: 5.6528}
+  m_LocalScale: {x: 5.18, y: 14.62, z: 5.6528}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1967222261}
@@ -203,8 +203,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -323,10 +323,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - Aur bhai Noobde kaisa hai
+  - Bhadiya hai na be dispersion me to nai chala gya
   dialogueUI: {fileID: 1967222260}
   dialogueText: {fileID: 2386672}
   interactionPrompt: {fileID: 262462068}
   interactionRange: 3
+--- !u!136 &42617370
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42617367}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Height: 4.83
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &142777780
 GameObject:
   m_ObjectHideFlags: 0
@@ -2156,6 +2180,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3191221269693405097, guid: 44d57cfa07de346458450744785d8a7e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 42617368}
+    - targetCorrespondingSourceObject: {fileID: 3191221269693405097, guid: 44d57cfa07de346458450744785d8a7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 42617370}
   m_SourcePrefab: {fileID: 100100000, guid: 44d57cfa07de346458450744785d8a7e, type: 3}
 --- !u!1001 &914626567
 PrefabInstance:
