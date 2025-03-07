@@ -1,20 +1,35 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventorySystem : MonoBehaviour
 {
-    public GameObject[] inventorySlots = new GameObject[5]; // Inventory slots
-    private int selectedSlot = -1; // No slot selected initially
+    public GameObject[] inventorySlots = new GameObject[5]; // 5 inventory slots
+    public Image[] slotImages; // UI Slot Images
+    public Color selectedColor = Color.yellow;
+    public Color defaultColor = Color.white;
+    private int selectedSlot = -1;
 
     void Update()
     {
-        // Select slot with number keys (1-5)
+        // Select inventory slot using 1-5 keys
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             if (Input.GetKeyDown((i + 1).ToString()))
             {
-                selectedSlot = i;
-                Debug.Log($"Selected Slot {i + 1}: {inventorySlots[i]?.name ?? "Empty"}");
+                SelectSlot(i);
             }
+        }
+    }
+
+    void SelectSlot(int slotIndex)
+    {
+        selectedSlot = slotIndex;
+        Debug.Log($"Selected Slot {slotIndex + 1}: {inventorySlots[slotIndex]?.name ?? "Empty"}");
+
+        // Update UI Colors
+        for (int i = 0; i < slotImages.Length; i++)
+        {
+            slotImages[i].color = (i == selectedSlot) ? selectedColor : defaultColor;
         }
     }
 
@@ -22,10 +37,9 @@ public class InventorySystem : MonoBehaviour
     {
         for (int i = 0; i < inventorySlots.Length; i++)
         {
-            if (inventorySlots[i] == null) // Find empty slot
+            if (inventorySlots[i] == null) // Find first empty slot
             {
                 inventorySlots[i] = item;
-                item.SetActive(false); // Hide the item from the world
                 Debug.Log($"Picked up {item.name} in Slot {i + 1}");
                 return true;
             }
